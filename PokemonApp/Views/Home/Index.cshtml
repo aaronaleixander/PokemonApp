@@ -3,5 +3,26 @@
     ViewData["Title"] = $"{Model.PokedexId} : {Model.Name}";
 }
 
+<img src="@Model.ProfileImageUrl" />
 
+<h1>@Model.PokedexId : @Model.Name</h1>
+<p>Weight: @Model.Weight</p>
+<p>Height: @Model.Height</p>
+
+@if (Model.Abilities != null && Model.Abilities.Count != 0)
+{
+    <h2>Abilities</h2>
+    <ul>
+        @foreach(string ability in Model.Abilities)
+        {
+            <li>
+                @ability
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>This pokemon does not have any abilites.</p>
+}
 

@@ -24,8 +24,23 @@ namespace PokemonApp.Controllers
             PokemonClient client = new PokemonClient();
             PokemonResponse data = await client.GetPokemonAsync(pokemonId);
 
+            var pokemon = new SinglePokedexEntry
+            {
+                PokedexId = data.id,
+                Weight = data.weight,
+                Height = data.height,
+                ProfileImageUrl = data.sprites.front_default,
+                Name = data.name,
+                Abilities = new List<string>()
+            };
 
-            return View(data);
+            foreach(var currentAbility in data.abilities)
+            {
+                pokemon.Abilities.Add(currentAbility.ability.name);
+            }
+
+
+            return View(pokemon);
         }
 
         public IActionResult Privacy()

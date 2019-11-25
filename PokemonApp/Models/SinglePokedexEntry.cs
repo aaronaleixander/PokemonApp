@@ -18,6 +18,6 @@ namespace PokemonApp.Models
         public int Weight { get; set; }
 
         // List of Pokemon's ability name
-        public List<Ability> Abilities { get; set; }
+        public List<string> Abilities { get; set; }
     }
 }
