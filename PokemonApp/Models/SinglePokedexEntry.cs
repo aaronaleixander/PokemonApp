@@ -14,8 +14,11 @@ namespace PokemonApp.Models
         public int PokedexId { get; set; }
         public string ProfileImageUrl { get; set; }
         public string Name { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+
+
+        public int Height { get; set; } // Decimeters
+
+        public int Weight { get; set; } // Hectograms
 
         // List of Pokemon's ability name
         public List<string> Abilities { get; set; }

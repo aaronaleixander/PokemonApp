@@ -7,7 +7,7 @@
 
 <h1>@Model.PokedexId : @Model.Name</h1>
 <p>Weight: @Model.Weight</p>
-<p>Height: @Model.Height</p>
+<p>Height: @UnitConversionHelper.DecimetersToFeetAndInches(Model.Height)</p>
 
 @if (Model.Abilities != null && Model.Abilities.Count != 0)
 {
